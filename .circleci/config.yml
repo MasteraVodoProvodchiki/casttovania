@@ -70,6 +70,7 @@ jobs:
     <<: *jobDefaults
     steps:
       - checkout
+      - run: git pull
       - *yarnInstall
       - run: |
           echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_TOKEN" > .npmrc
