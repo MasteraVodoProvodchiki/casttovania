@@ -69,7 +69,8 @@ jobs:
   publish:
     <<: *jobDefaults
     steps:
-      - *attachInstall
+      - checkout
+      - *yarnInstall
       - run: |
           echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_TOKEN" > .npmrc
           yarn run publish
