@@ -64,12 +64,11 @@ jobs:
           git config user.email "ci@masteravodoprovodchiki.club"
           git config user.name ci
           yarn bump
+          git push
           git push --tags
   publish:
     <<: *jobDefaults
     steps:
-      - checkout
-      - *yarnInstall
       - run: |
           echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_TOKEN" > .npmrc
           yarn run publish
@@ -94,5 +93,5 @@ workflows:
             - approve_publish
       - publish:
           requires:
-            - build
+            - install
             - bump
