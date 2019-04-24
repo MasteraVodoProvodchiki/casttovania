@@ -74,7 +74,7 @@ jobs:
       - *yarnInstall
       - run: |
           echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_TOKEN" > .npmrc
-          yarn run publish
+          yarn run publish:ci
 workflows:
   version: 2
   test_and_build:

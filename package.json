@@ -21,7 +21,7 @@
 		"lint:tslint": "tslint --project ./",
 		"lint:eslint": "eslint ./",
 		"bump": "yarn version --patch --non-interactive --message \"v%s [skip ci]\"",
-		"publish": "yarn build && yarn publish"
+		"publish:ci": "yarn build && yarn publish --access public"
 	},
 	"devDependencies": {
 		"@types/jest": "^24.0.11",
