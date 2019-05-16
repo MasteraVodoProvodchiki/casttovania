@@ -1,7 +1,10 @@
+import isNumber from 'is-number'
+
+import { isNull, isTrue, isFalse } from './check'
 import { Options, Primitive } from './types'
 
 
-const numberRegEx = /^\-?\d+(\.\d+)?$/
+const radixRegEx = /^0x?/
 
 const defaultOptions: Options = {
 	arraySeparator: ',',
@@ -15,19 +18,23 @@ const cast = (str: string, inOptions: Partial<Options> = {}): Primitive | Primit
 
 	const trimmed = str.trim()
 
-	if (numberRegEx.test(trimmed)) {
+	if (isNumber(trimmed)) {
+		if (radixRegEx.test(trimmed)) {
+			return parseInt(trimmed)
+		}
+
 		return parseFloat(trimmed)
 	}
 
-	if (trimmed.toLowerCase() === 'null') {
+	if (isNull(trimmed)) {
 		return null
 	}
 
-	if (trimmed.toLowerCase() === 'true') {
+	if (isTrue(trimmed)) {
 		return true
 	}
 
-	if (trimmed.toLocaleLowerCase() === 'false') {
+	if (isFalse(trimmed)) {
 		return false
 	}
 

@@ -19,6 +19,22 @@ const tests: TestCase[] = [{
 	str: '-5.44 ',
 	expected: -5.44,
 }, {
+	name: 'parse positive exponential number',
+	str: '10e3',
+	expected: 10000,
+}, {
+	name: 'parse hex number',
+	str: '0xAB',
+	expected: 171,
+}, {
+	name: 'parse octal number',
+	str: '012',
+	expected: 12,
+}, {
+	name: 'parse hex number',
+	str: '10e-3',
+	expected: 0.01,
+}, {
 	name: 'parse wrong number',
 	str: ' --6.66',
 	expected: ' --6.66',
