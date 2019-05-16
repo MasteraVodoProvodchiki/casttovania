@@ -7,6 +7,12 @@
 	"author": "evilfant <evilfant@gmail.com>",
 	"license": "MIT",
 	"private": false,
+	"keywords": [
+		"parse",
+		"cast",
+		"convert",
+		"string"
+	],
 	"files": [
 		"/dist"
 	],
