@@ -1,6 +1,6 @@
 {
 	"name": "@masteravodoprovodchiki/casttovania",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Convert string to something",
 	"main": "./dist/index.js",
 	"repository": "https://github.com/MasteraVodoProvodchiki/casttovania.git",
